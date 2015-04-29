@@ -1,0 +1,12 @@
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+.settings/
+.project
+.classpath
+.buildpath
+.target
+*/build/*
+.idea

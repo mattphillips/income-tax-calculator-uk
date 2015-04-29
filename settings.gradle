@@ -1,0 +1,2 @@
+include 'calculator-library', 'calculator-client'
+rootProject.name = 'salary-calculator'
