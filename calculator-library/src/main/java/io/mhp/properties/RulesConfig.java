@@ -31,4 +31,32 @@ public interface RulesConfig extends Config {
     
     @Key("additionalTax.band")
     BigDecimal getAdditionalTaxBand();
+    
+    @Key("personalAllowance.rate")
+    BigDecimal getPersonalAllowanceRate();
+    
+    @Key("maxPersonalAllowance.band")
+    BigDecimal getMaxPersonalAllowanceBand();
+    
+    @Key("upperPersonalAllowance.band")
+    BigDecimal getUpperPersonalAllowanceBand();
+    
+    @Key("marriageAllowance.rate")
+    BigDecimal getMarriageAllowanceRate();
+    
+    @Key("blindAllowance.rate")
+    BigDecimal getBlindAllowanceRate();
+    
+    @Key("ageAllowance.rate")
+    BigDecimal getAgeAllowanceRate();
+    
+    @Key("basicAgeAllowance.band")
+    BigDecimal getBasicAgeAllowanceBand();
+    
+    @Key("highierAgeAllowance.band")
+    BigDecimal getHighierAgeAllowanceBand();
+    
+    @Key("additionalAgeAllowance.band")
+    BigDecimal getAdditionalAgeAllowanceBand();
+
 }
