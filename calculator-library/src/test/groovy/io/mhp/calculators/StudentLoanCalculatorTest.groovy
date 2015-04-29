@@ -2,8 +2,6 @@ package io.mhp.calculators
 
 import io.mhp.properties.RulesConfig
 
-import org.junit.Ignore
-
 import spock.lang.Specification
 import spock.lang.Unroll
 
