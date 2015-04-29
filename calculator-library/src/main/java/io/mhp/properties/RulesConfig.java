@@ -16,4 +16,19 @@ public interface RulesConfig extends Config {
     
     @Key("studentLoan.plan-2")
     BigDecimal getStudentLoanPlan2();
+    
+    @Key("basicTax.rate")
+    BigDecimal getBasicTaxRate();
+    
+    @Key("basicTax.band")
+    BigDecimal getBasicTaxBand();
+    
+    @Key("highierTax.rate")
+    BigDecimal getHighierTaxRate();
+    
+    @Key("additionalTax.rate")
+    BigDecimal getAdditionalTaxRate();
+    
+    @Key("additionalTax.band")
+    BigDecimal getAdditionalTaxBand();
 }
