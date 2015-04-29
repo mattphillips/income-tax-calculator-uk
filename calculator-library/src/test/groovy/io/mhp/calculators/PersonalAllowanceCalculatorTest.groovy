@@ -31,7 +31,7 @@ class PersonalAllowanceCalculatorTest extends Specification {
         result == expectedResult
 
         where:
-
+        
         salary      | blind || expectedResult
         0           | true  || 12890.00
         0           | false || 10600.00
@@ -46,6 +46,7 @@ class PersonalAllowanceCalculatorTest extends Specification {
         150000.00   | true  || 2290.00
         150000.00   | false || 0.00
     }
+        
     
     @Unroll
     def "should return personal allowance minus 50% of every pound of a salary over 100000, salary: #salary"() {
@@ -64,11 +65,11 @@ class PersonalAllowanceCalculatorTest extends Specification {
 
         where:
 
-        salary      | expectedResult
-        110000.00   | 5600.00
-        100000.00   | 10600.00
-        100000.01   | 10600.00
-        115000.65   | 3100.00
+        salary      || expectedResult
+        110000.00   || 5600.00
+        100000.00   || 10600.00
+        100000.01   || 10600.00
+        115000.65   || 3100.00
     }
 
     @Unroll
@@ -88,10 +89,10 @@ class PersonalAllowanceCalculatorTest extends Specification {
 
         where:
 
-        salary      | expectedResult
-        99999.99    | false
-        100000.00   | false
-        100000.01   | true
+        salary      || expectedResult
+        99999.99    || false
+        100000.00   || false
+        100000.01   || true
     }
 
     @Unroll
@@ -111,10 +112,10 @@ class PersonalAllowanceCalculatorTest extends Specification {
 
         where:
 
-        salary      | expectedResult
-        119999.99   | false
-        120000.00   | true
-        120000.01   | true
+        salary      || expectedResult
+        119999.99   || false
+        120000.00   || true
+        120000.01   || true
     }
 
     void configureMock() {

@@ -33,11 +33,11 @@ class TaxCalculatorTest extends Specification {
         
         where:
         
-        salary   | expectedResult
-        1.00           | 0.00
-        20000.00        | 1880.00
-        70000.00        | 23760.00
-        250000.00       | 107730.00
+        salary      || expectedResult
+        1.00        || 0.00
+        20000.00    || 1880.00
+        70000.00    || 23760.00
+        250000.00   || 107730.00
     }
     
     @Unroll
@@ -57,11 +57,11 @@ class TaxCalculatorTest extends Specification {
         
         where:
         
-        taxableIncome   | expectedResult
-        -1.00           | 0.00
-        20000.00        | 0.20
-        50000.00        | 0.40
-        150001.00       | 0.45
+        taxableIncome   || expectedResult
+        -1.00           || 0.00
+        20000.00        || 0.20
+        50000.00        || 0.40
+        150001.00       || 0.45
     }
     
     @Unroll
@@ -81,10 +81,10 @@ class TaxCalculatorTest extends Specification {
         
         where:
         
-        taxableIncome   | expectedResult
-        -1.00           | true
-        0.00            | true
-        1.00            | false
+        taxableIncome   || expectedResult
+        -1.00           || true
+        0.00            || true
+        1.00            || false
     }
     
     @Unroll
@@ -104,11 +104,11 @@ class TaxCalculatorTest extends Specification {
         
         where:
         
-        taxableIncome   | expectedResult
-        31785.00        | false
-        150000.01       | false
-        31785.01        | true
-        150000.00       | true
+        taxableIncome   || expectedResult
+        31785.00        || false
+        150000.01       || false
+        31785.01        || true
+        150000.00       || true
     }
     
     @Unroll
@@ -128,9 +128,9 @@ class TaxCalculatorTest extends Specification {
         
         where:
         
-        taxableIncome   | expectedResult
-        150000.01       | true
-        149999.99       | false
+        taxableIncome   || expectedResult
+        150000.01       || true
+        149999.99       || false
     }
 
     void configureMock() {

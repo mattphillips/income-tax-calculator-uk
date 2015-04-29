@@ -33,12 +33,12 @@ class StudentLoanCalculatorTest extends Specification {
         
         where:
         
-        salary      | expectedRepayment
-        0.00        | 0.00
-        20000.00    | 239.85
-        50000.00    | 2939.85
-        42500.65    | 2264.91
-        17335.00    | 0.00
+        salary      || expectedRepayment
+        0.00        || 0.00
+        20000.00    || 239.85
+        50000.00    || 2939.85
+        42500.65    || 2264.91
+        17335.00    || 0.00
     }
     
     def "should return repayment amount for student loan plan 2"() {
@@ -58,12 +58,12 @@ class StudentLoanCalculatorTest extends Specification {
         
         where:
         
-        salary      | expectedRepayment
-        0.00        | 0.00
-        25000.00    | 360.00
-        50000.00    | 2610.00
-        42500.65    | 1935.06
-        21000.00    | 0.00
+        salary      || expectedRepayment
+        0.00        || 0.00
+        25000.00    || 360.00
+        50000.00    || 2610.00
+        42500.65    || 1935.06
+        21000.00    || 0.00
     }
     
     def "should return 0 when neither loan plan is active"() {
@@ -100,14 +100,14 @@ class StudentLoanCalculatorTest extends Specification {
         
         where:
         
-        salary  | expectedRepayment
-        1.00    | 0.09
-        10.00   | 0.90
-        100.00  | 9.00
-        1000.00 | 90.00
-        350.91  | 31.58
-        89020.01| 8011.80
-        3819.58 | 343.76
+        salary  || expectedRepayment
+        1.00    || 0.09
+        10.00   || 0.90
+        100.00  || 9.00
+        1000.00 || 90.00
+        350.91  || 31.58
+        89020.01|| 8011.80
+        3819.58 || 343.76
     }
     
     void configureMock() {
