@@ -41,7 +41,7 @@ public class StudentLoanCalculator {
             return applyStudentLoanRate(salary.subtract(loanPlan));
     }
 
-    BigDecimal applyStudentLoanRate(BigDecimal remainingSalary) {
+    private BigDecimal applyStudentLoanRate(BigDecimal remainingSalary) {
         return remainingSalary.multiply(rules.getStudentLoanRate()).setScale(SCALE, ROUNDING_MODE);
     }
 
