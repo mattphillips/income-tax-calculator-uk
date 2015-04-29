@@ -3,21 +3,11 @@ package io.mhp.calculators;
 import io.mhp.properties.RulesConfig;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
-public class StudentLoanCalculator {
-
-    private static final int SCALE = 2;
-    private static final int DIFFERENCE = 0;
-
-    private static final RoundingMode ROUNDING_MODE = RoundingMode.HALF_EVEN;
-    
-    private static final BigDecimal ZERO = BigDecimal.ZERO.setScale(SCALE, ROUNDING_MODE);
-
-    private final RulesConfig rules;
+public class StudentLoanCalculator extends Calculator {
 
     public StudentLoanCalculator(final RulesConfig rules) {
-        this.rules = rules;
+        super(rules);
     }
 
     BigDecimal calculate(final BigDecimal salary, final boolean studenLoanPlan1, final boolean studentLoanPlan2) {
@@ -46,6 +36,6 @@ public class StudentLoanCalculator {
     }
 
     private boolean isSalaryLessThanLoanPlan(final BigDecimal salary, final BigDecimal loanPlan) {
-        return salary.compareTo(loanPlan) < DIFFERENCE;
+        return salary.compareTo(loanPlan) < COMPARABLE_DIFFERENCE;
     }
 }
