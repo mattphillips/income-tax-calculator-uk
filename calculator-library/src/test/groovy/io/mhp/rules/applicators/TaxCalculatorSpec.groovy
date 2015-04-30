@@ -26,7 +26,7 @@ class TaxCalculatorSpec extends Specification {
         
         when:
         
-        def result = classUnderTest.calculate(salary, personalAllowance, pension)
+        def result = classUnderTest.apply(salary, personalAllowance, pension)
         
         then: "result should be the expected tax amount"
         

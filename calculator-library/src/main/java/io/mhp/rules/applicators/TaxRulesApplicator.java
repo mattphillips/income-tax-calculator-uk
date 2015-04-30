@@ -12,7 +12,7 @@ public class TaxRulesApplicator extends RulesApplicator {
         super(rules);
     }
 
-    BigDecimal calculate(final BigDecimal salary, final BigDecimal personalAllowance, final BigDecimal pension) {
+    BigDecimal apply(final BigDecimal salary, final BigDecimal personalAllowance, final BigDecimal pension) {
 
         BigDecimal taxableIncome = salary.subtract(personalAllowance).subtract(pension);
 

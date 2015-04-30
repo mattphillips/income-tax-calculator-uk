@@ -12,7 +12,7 @@ public class StudentLoanRulesApplicator extends RulesApplicator {
         super(rules);
     }
 
-    BigDecimal calculate(final BigDecimal salary, final StudentLoanPlan studenLoanPlan) {
+    BigDecimal apply(final BigDecimal salary, final StudentLoanPlan studenLoanPlan) {
 
         if (studenLoanPlan.equals(StudentLoanPlan.ONE))
             return getStudentLoanRepayment(salary, rules.getStudentLoanPlan1());

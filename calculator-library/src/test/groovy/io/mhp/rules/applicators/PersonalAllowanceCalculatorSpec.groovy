@@ -25,7 +25,7 @@ class PersonalAllowanceCalculatorSpec extends Specification {
 
         when: 
 
-        def result = classUnderTest.calculate(salary, blind, false, false)
+        def result = classUnderTest.apply(salary, blind, false, false)
 
         then: "result should be correct personal allowance"
 

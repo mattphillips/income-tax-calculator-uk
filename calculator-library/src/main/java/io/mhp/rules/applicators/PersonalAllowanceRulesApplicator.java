@@ -13,7 +13,7 @@ public class PersonalAllowanceRulesApplicator extends RulesApplicator {
     }
 
     // TODO: change these bools to enum
-    BigDecimal calculate(
+    BigDecimal apply(
             final BigDecimal salary,
             final boolean blindAllowance,
             final boolean marragieAllowance,
