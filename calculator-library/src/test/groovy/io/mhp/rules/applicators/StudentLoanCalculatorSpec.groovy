@@ -25,7 +25,7 @@ class StudentLoanCalculatorSpec extends Specification {
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan1)
+        def repayment = classUnderTest.apply(salary, studentLoanPlan1)
         
         then: "the expected result should be 9% of any earnings over 17335"
         
@@ -49,7 +49,7 @@ class StudentLoanCalculatorSpec extends Specification {
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan2)
+        def repayment = classUnderTest.apply(salary, studentLoanPlan2)
         
         then: "the expected result should be 9% of any earnings over 21000"
         
@@ -74,7 +74,7 @@ class StudentLoanCalculatorSpec extends Specification {
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan)
+        def repayment = classUnderTest.apply(salary, studentLoanPlan)
         
         then: "the expected result should be 0"
         

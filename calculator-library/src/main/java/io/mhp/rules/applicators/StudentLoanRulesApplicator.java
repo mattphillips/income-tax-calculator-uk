@@ -1,5 +1,6 @@
 package io.mhp.rules.applicators;
 
+import io.mhp.calculators.Calculator;
 import io.mhp.domains.StudentLoanPlan;
 import io.mhp.properties.RulesConfig;
 
@@ -11,7 +12,7 @@ public class StudentLoanRulesApplicator extends RulesApplicator {
         super(rules);
     }
 
-    BigDecimal calculate(final BigDecimal salary, final StudentLoanPlan studenLoanPlan) {
+    BigDecimal apply(final BigDecimal salary, final StudentLoanPlan studenLoanPlan) {
 
         if (studenLoanPlan.equals(StudentLoanPlan.ONE))
             return getStudentLoanRepayment(salary, rules.getStudentLoanPlan1());
@@ -33,7 +34,7 @@ public class StudentLoanRulesApplicator extends RulesApplicator {
     }
 
     private BigDecimal applyStudentLoanRate(BigDecimal remainingSalary) {
-        return remainingSalary.multiply(rules.getStudentLoanRate()).setScale(SCALE, ROUNDING_MODE);
+        return Calculator.calculateStudentLoan(remainingSalary, rules.getStudentLoanRate());
     }
 
     private boolean isSalaryLessThanLoanPlan(final BigDecimal salary, final BigDecimal loanPlan) {
