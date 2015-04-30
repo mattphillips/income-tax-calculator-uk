@@ -1,17 +1,18 @@
-package io.mhp.calculators
+package io.mhp.rules.applicators
 
 import io.mhp.properties.RulesConfig;
+import io.mhp.rules.applicators.PersonalAllowanceRulesApplicator;
 import spock.lang.Specification
 import spock.lang.Unroll;
 
 class PersonalAllowanceCalculatorSpec extends Specification {
 
     RulesConfig mockRules = Mock()
-    PersonalAllowanceCalculator classUnderTest
+    PersonalAllowanceRulesApplicator classUnderTest
 
     def setup() {
 
-        classUnderTest = new PersonalAllowanceCalculator(mockRules)
+        classUnderTest = new PersonalAllowanceRulesApplicator(mockRules)
         configureMock()
     }
     

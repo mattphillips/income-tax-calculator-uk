@@ -1,4 +1,4 @@
-package io.mhp.calculators;
+package io.mhp.rules.applicators;
 
 import io.mhp.properties.RulesConfig;
 
@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 // TODO: marriage and age logic still need to be implemented pending further investigation
-public class PersonalAllowanceCalculator extends Calculator {
+public class PersonalAllowanceRulesApplicator extends RulesApplicator {
 
     private static final int NO_DECIMAL_PLACES = 0;
 
@@ -14,7 +14,7 @@ public class PersonalAllowanceCalculator extends Calculator {
 
     private static final BigDecimal DIVIDER = new BigDecimal(2.00);
 
-    public PersonalAllowanceCalculator(RulesConfig rules) {
+    public PersonalAllowanceRulesApplicator(RulesConfig rules) {
         super(rules);
     }
 
