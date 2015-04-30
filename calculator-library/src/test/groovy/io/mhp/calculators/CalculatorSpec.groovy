@@ -63,7 +63,7 @@ class CalculatorSpec extends Specification {
     }
 
     @Unroll
-    def "should return personal allowance rate: #paRate minus salary: #salary mode personal Allowance Band: #paBand divided by 2 and rounded down"() {
+    def "should return personal allowance rate: #paRate minus salary: #salary remainder personal Allowance Band: #paBand divided by 2 and rounded down"() {
 
         when:
 
@@ -79,4 +79,23 @@ class CalculatorSpec extends Specification {
         116000.00 | 100000.00 | 10600.00  || 2600.00
         105000.00 | 100000.00 | 10600.00  || 8100.00
     }
+    
+    @Unroll
+    def "should return the pension percentage from the salary: #salary"() {
+
+        when:
+
+        def result = Calculator.calculatePension(salary, pensionRate)
+
+        then:
+
+        result == expectedResult
+
+        where:
+
+        salary    | pensionRate || expectedResult
+        116000.00 | 0.05        || 5800.00
+        105000.00 | 0.15        || 15750.00
+    }
+    
 }
