@@ -1,6 +1,7 @@
 package io.mhp.calculators
 
 import io.mhp.properties.RulesConfig
+import io.mhp.domains.StudentLoanPlan
 
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -20,12 +21,11 @@ class StudentLoanCalculatorTest extends Specification {
         
         given: "student loan plan 1 is active"
         
-        def studentLoanPlan1 = true
-        def studentLoanPlan2 = false
+        def studentLoanPlan1 = StudentLoanPlan.ONE
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan1, studentLoanPlan2)
+        def repayment = classUnderTest.calculate(salary, studentLoanPlan1)
         
         then: "the expected result should be 9% of any earnings over 17335"
         
@@ -45,12 +45,11 @@ class StudentLoanCalculatorTest extends Specification {
     
         given: "student loan plan 2 is active"
         
-        def studentLoanPlan1 = false
-        def studentLoanPlan2 = true
+        def studentLoanPlan2 = StudentLoanPlan.TWO
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan1, studentLoanPlan2)
+        def repayment = classUnderTest.calculate(salary, studentLoanPlan2)
         
         then: "the expected result should be 9% of any earnings over 21000"
         
@@ -71,12 +70,11 @@ class StudentLoanCalculatorTest extends Specification {
         given: "no active loan plan"
         
         def salary = 100000.00
-        def studentLoanPlan1 = false
-        def studentLoanPlan2 = false
+        def studentLoanPlan = StudentLoanPlan.NEITHER
         
         when: "applying correct rate to salary"
         
-        def repayment = classUnderTest.calculate(salary, studentLoanPlan1, studentLoanPlan2)
+        def repayment = classUnderTest.calculate(salary, studentLoanPlan)
         
         then: "the expected result should be 0"
         
