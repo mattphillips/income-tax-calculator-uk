@@ -1,5 +1,6 @@
 package io.mhp.rules.applicators;
 
+import io.mhp.calculators.Calculator;
 import io.mhp.properties.RulesConfig;
 
 import java.math.BigDecimal;
@@ -17,7 +18,7 @@ public class TaxRulesApplicator extends RulesApplicator {
 
         BigDecimal taxRate = getTaxRate(taxableIncome);
 
-        return taxableIncome.multiply(taxRate).setScale(SCALE, ROUNDING_MODE);
+        return Calculator.calculateTax(taxableIncome, taxRate);
     }
 
     private BigDecimal getTaxRate(BigDecimal taxableIncome) {
