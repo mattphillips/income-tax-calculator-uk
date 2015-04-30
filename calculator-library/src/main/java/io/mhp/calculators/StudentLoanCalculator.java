@@ -1,5 +1,6 @@
 package io.mhp.calculators;
 
+import io.mhp.domains.StudentLoanPlan;
 import io.mhp.properties.RulesConfig;
 
 import java.math.BigDecimal;
@@ -10,12 +11,12 @@ public class StudentLoanCalculator extends Calculator {
         super(rules);
     }
 
-    BigDecimal calculate(final BigDecimal salary, final boolean studenLoanPlan1, final boolean studentLoanPlan2) {
+    BigDecimal calculate(final BigDecimal salary, final StudentLoanPlan studenLoanPlan) {
 
-        if (studenLoanPlan1)
+        if (studenLoanPlan.equals(StudentLoanPlan.ONE))
             return getStudentLoanRepayment(salary, rules.getStudentLoanPlan1());
 
-        else if (studentLoanPlan2)
+        else if (studenLoanPlan.equals(StudentLoanPlan.TWO))
             return getStudentLoanRepayment(salary, rules.getStudentLoanPlan2());
 
         else
