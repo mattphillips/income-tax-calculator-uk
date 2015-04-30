@@ -6,7 +6,7 @@ import io.mhp.domains.StudentLoanPlan
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class StudentLoanCalculatorTest extends Specification {
+class StudentLoanCalculatorSpec extends Specification {
     
     RulesConfig mockRules = Mock()
     StudentLoanCalculator classUnderTest

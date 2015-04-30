@@ -4,7 +4,7 @@ import io.mhp.properties.RulesConfig
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class TaxCalculatorTest extends Specification {
+class TaxCalculatorSpec extends Specification {
 
     RulesConfig mockRules = Mock()
     TaxCalculator classUnderTest

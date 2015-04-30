@@ -4,7 +4,7 @@ import io.mhp.properties.RulesConfig;
 import spock.lang.Specification
 import spock.lang.Unroll;
 
-class PersonalAllowanceCalculatorTest extends Specification {
+class PersonalAllowanceCalculatorSpec extends Specification {
 
     RulesConfig mockRules = Mock()
     PersonalAllowanceCalculator classUnderTest
