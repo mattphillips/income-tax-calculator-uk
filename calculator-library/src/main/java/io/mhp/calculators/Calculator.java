@@ -14,11 +14,11 @@ public class Calculator {
     private static final BigDecimal DIVIDER = new BigDecimal(2.00);
 
     public static BigDecimal calculateTax(final BigDecimal taxableIncome, final BigDecimal taxRate) {
-        return taxableIncome.multiply(taxRate).setScale(SCALE, ROUNDING_MODE);
+        return calculatePercentage(taxableIncome, taxRate);
     }
 
     public static BigDecimal calculateStudentLoan(final BigDecimal remainingSalary, final BigDecimal loanRate) {
-        return remainingSalary.multiply(loanRate).setScale(SCALE, ROUNDING_MODE);
+        return calculatePercentage(remainingSalary, loanRate);
     }
 
     public static BigDecimal calculatePersonalAllowanceWithBlindAllowance(
@@ -40,5 +40,13 @@ public class Calculator {
                         .divide(DIVIDER);
 
         return personAllowanceRate.subtract(reductionInPersonalAllowance);
+    }
+    
+    public static BigDecimal calculatePension(final BigDecimal salary, final BigDecimal pensionRate) {
+        return calculatePercentage(salary, pensionRate);
+    }
+    
+    private static BigDecimal calculatePercentage(final BigDecimal total, final BigDecimal percentageMultiplier) {
+        return total.multiply(percentageMultiplier).setScale(SCALE, ROUNDING_MODE);
     }
 }
