@@ -1,19 +1,19 @@
-package io.mhp.calculators
+package io.mhp.rules.applicators
 
 import io.mhp.properties.RulesConfig
+import io.mhp.rules.applicators.StudentLoanRulesApplicator;
 import io.mhp.domains.StudentLoanPlan
-
 import spock.lang.Specification
 import spock.lang.Unroll
 
 class StudentLoanCalculatorSpec extends Specification {
     
     RulesConfig mockRules = Mock()
-    StudentLoanCalculator classUnderTest
+    StudentLoanRulesApplicator classUnderTest
     
     def setup() {
         
-        classUnderTest = new StudentLoanCalculator(mockRules)
+        classUnderTest = new StudentLoanRulesApplicator(mockRules)
         configureMock()
     }
     

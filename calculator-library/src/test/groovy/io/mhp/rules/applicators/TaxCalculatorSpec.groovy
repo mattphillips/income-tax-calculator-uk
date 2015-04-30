@@ -1,17 +1,18 @@
-package io.mhp.calculators
+package io.mhp.rules.applicators
 
 import io.mhp.properties.RulesConfig
+import io.mhp.rules.applicators.TaxRulesApplicator;
 import spock.lang.Specification
 import spock.lang.Unroll
 
 class TaxCalculatorSpec extends Specification {
 
     RulesConfig mockRules = Mock()
-    TaxCalculator classUnderTest
+    TaxRulesApplicator classUnderTest
 
     def setup() {
 
-        classUnderTest = new TaxCalculator(mockRules)
+        classUnderTest = new TaxRulesApplicator(mockRules)
         configureMock()
     }
     

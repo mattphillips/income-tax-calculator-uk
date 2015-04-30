@@ -1,13 +1,13 @@
-package io.mhp.calculators;
+package io.mhp.rules.applicators;
 
 import io.mhp.domains.StudentLoanPlan;
 import io.mhp.properties.RulesConfig;
 
 import java.math.BigDecimal;
 
-public class StudentLoanCalculator extends Calculator {
+public class StudentLoanRulesApplicator extends RulesApplicator {
 
-    public StudentLoanCalculator(final RulesConfig rules) {
+    public StudentLoanRulesApplicator(final RulesConfig rules) {
         super(rules);
     }
 

@@ -1,11 +1,11 @@
-package io.mhp.calculators;
+package io.mhp.rules.applicators;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import io.mhp.properties.RulesConfig;
 
-public abstract class Calculator {
+public abstract class RulesApplicator {
 
     protected static final int SCALE = 2;
     protected static final int COMPARABLE_DIFFERENCE = 0;
@@ -16,7 +16,7 @@ public abstract class Calculator {
 
     protected final RulesConfig rules;
     
-    public Calculator(final RulesConfig rules) {
+    public RulesApplicator(final RulesConfig rules) {
         this.rules = rules;
     }
     

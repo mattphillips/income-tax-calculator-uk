@@ -1,13 +1,13 @@
-package io.mhp.calculators;
+package io.mhp.rules.applicators;
 
 import io.mhp.properties.RulesConfig;
 
 import java.math.BigDecimal;
 
 // TODO: it may be worth creating a domain for this now to set a custom scale
-public class TaxCalculator extends Calculator {
+public class TaxRulesApplicator extends RulesApplicator {
 
-    public TaxCalculator(final RulesConfig rules) {
+    public TaxRulesApplicator(final RulesConfig rules) {
         super(rules);
     }
 
